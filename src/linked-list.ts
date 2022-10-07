@@ -1,18 +1,9 @@
-class LinkedListNode<T> {
-  readonly value: T;
-
-  next: LinkedListNode<T> | null = null;
-  prev: LinkedListNode<T> | null = null;
-
-  constructor(value: T) {
-    this.value = value;
-  }
-}
+import Node from './node';
 
 class LinkedList<T> {
-  first: LinkedListNode<T> | null = null;
-  last: LinkedListNode<T> | null = null;
-  listLength = 0;
+  first: Node<T> | null = null;
+  last: Node<T> | null = null;
+    listLength = 0;
 
   add(value: T) {
     let newNode;
@@ -20,13 +11,13 @@ class LinkedList<T> {
     this.listLength += 1;
 
     if (this.first === null || this.last === null) {
-      newNode = new LinkedListNode(value);
+      newNode = new Node(value);
       this.first = newNode;
       this.last = newNode;
       return newNode;
     }
 
-    newNode = new LinkedListNode(value);
+    newNode = new Node(value);
     newNode.next = null;
     newNode.prev = this.last;
 
