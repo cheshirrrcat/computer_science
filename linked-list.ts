@@ -67,6 +67,6 @@ console.log(list?.first?.next?.value);
 console.log(list?.first?.next?.prev?.value);
 console.log(list.listLength);
 
-for (let item of list) {
+for (const item of list) {
   console.log("item", item);
 }
