@@ -2,7 +2,7 @@ class Stack<T> {
   public head: T | null = null;
   private limit: number;
   readonly stack: T[];
-  private stackLength: number = 0;
+  private stackLength = 0;
 
   constructor(limit: number) {
     this.limit = limit;
